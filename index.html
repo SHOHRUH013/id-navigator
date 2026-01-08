@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ID Navigator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="wrap">
+    <header class="top">
+        <h1>ID Navigator</h1>
+    </header>
+
+    <section class="stats">
+        <div class="card stat">
+            <div class="label">Jami IDlar</div>
+            <div class="value" id="totalIds">0</div>
+        </div>
+
+        <div class="card stat">
+            <div class="label">Hozirgi tartib</div>
+            <div class="value"><span id="currentPos">0</span>/<span id="totalPos">0</span></div>
+
+            <div class="jumpRow">
+                <div class="jumpLabel">Kerakli tartib</div>
+                <div class="jumpControls">
+                    <input id="jumpInput" type="number" inputmode="numeric" min="1" step="1" placeholder="masalan: 128" />
+                    <button id="jumpBtn" class="btn btnBlue btnSmall" type="button">O‘tish</button>
+                </div>
+                <div class="hint">1 dan <span id="maxHint">0</span> gacha</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="card main">
+        <div class="row">
+            <div class="label">Tartib raqami</div>
+            <div class="big" id="orderLabel">1-ID</div>
+        </div>
+
+        <div class="row">
+            <div class="label">ID</div>
+            <div class="idValue" id="idValue">—</div>
+        </div>
+
+        <div class="controls">
+            <button id="prevBtn" class="btn btnGray" type="button">← Oldingi</button>
+            <button id="copyBtn" class="btn btnBlue" type="button">📋 Copy</button>
+            <button id="nextBtn" class="btn btnGreen" type="button">Keyingi →</button>
+        </div>
+
+        <div class="status" id="statusText">Tayyor ✅</div>
+        <div class="status" id="status">
+            
+            <div class="last-copied" id="lastCopiedWrap" style="display:none;">
+                Oxirgi copy: <span id="lastCopiedId"></span>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="foot">
+        <div class="tip">Hotkeys: ← / → va Enter (tartibga o‘tish)</div>
+    </footer>
+</main>
+
+<script src="ids.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
